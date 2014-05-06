@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Leaflet Map</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link
+		rel="stylesheet"
+		href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+	/>
+	<link rel="stylesheet" href="css/ucmap.css" />
+</head>
+<body>
+	<div id="map" style="width: 600px; height: 400px"></div>
+	<script	src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+	</script>
+	
+	<script>
+		var wpbUrbanCanvas = new L.LayerGroup();
+		
+		L.marker([26.67,-80.055],
+			{title: '4700 S. Dixie Highway',
+			opacity: 1.0})
+			.bindPopup('<b>4700 S. Dixie Highway</b><br><a href="detail.html">Howley Restaurant Mural</a></br>').addTo(wpbUrbanCanvas),
+		L.marker([26.71, -80.053],
+			{title: '326 Fern Street',
+			opacity: 1.0})
+			.bindPopup('<b>326 Fern Street</b><br><a href="detail.html">Alexander Lofts Mural</a></br>').addTo(wpbUrbanCanvas),
+		L.marker([26.711,-80.056],
+			{title: '501 Fern St',
+			opacity: 1.0})
+			.bindPopup('<b>501 Fern St</b><br><a href="detail.html">Post Modern Paisley Mural</a></br>').addTo(wpbUrbanCanvas),
+		L.marker([26.712139,-80.056388],
+			{title: '524 Datura Street',
+			opacity: 1.0})
+			.bindPopup('<b>524 Datura Street</b><br><a href="detail.html">Faces Mural</a></br>').addTo(wpbUrbanCanvas),
+		L.marker([26.711712,-80.056016],
+			{title: '501 Evernia  Street',
+			opacity: 1.0})
+			.bindPopup('<b>501 Evernia  Street</b><br><a href="detail.html">Cars Mural</a></br>').addTo(wpbUrbanCanvas),
+		L.marker([26.713265,-80.05648],
+			{title: '528 Clematis  Street',
+			opacity: 1.0})
+			.bindPopup('<b>528 Clematis  Street</b><br><a href="detail.html">Landscape  Mural</a></br>').addTo(wpbUrbanCanvas),
+		L.marker([26.713137,-80.056149],
+			{title: '518 Clematis  Street',
+			opacity: 1.0})
+			.bindPopup('<b>518 Clematis  Street</b><br><a href="detail.html">Legendary Rockstars Mural</a></br>').addTo(wpbUrbanCanvas);
+		
+		var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+		
+		var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		osmAttrib = '&copy; ' + mapLink + ' Contributors';
+		
+		var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib});
+		
+		var map = L.map('map', { 
+			layers: [osmMap] })
+		.setView([26.713,-80.054], 14);
+		
+		var baseLayers = {
+			"OSM Mapnik": osmMap
+		};
+		var overlays = {
+			"Art Around WPB": wpbUrbanCanvas
+		};
+		
+		L.control.layers(baseLayers, overlays).addTo(map);
+
+		map.locate({setView: true, maxZoom: 16});
+
+		function onLocationFound(e) {
+			var radius = e.accuracy / 2;
+
+			L.marker(e.latlng).addTo(map)
+				.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+			L.circle(e.latlng, radius).addTo(map);
+		}
+
+		map.on('locationfound', onLocationFound);
+
+		function onLocationError(e) {
+			alert(e.message);
+		}
+
+		map.on('locationerror', onLocationError);
+	
+	</script>
+	
+</body>
+</html>

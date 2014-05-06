@@ -1,0 +1,77 @@
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+img{max-width:100%;}
+h1{
+	background:none;
+	border-radius: 0;
+	color: #31101f;
+}
+
+.link{
+	float:right;
+	position:absolute;
+	top:50%;
+	right:10px;
+	font-size:3em;
+	color: #31101f;
+	margin-top: -39px;
+}
+.center{text-align: center;display: block;}
+.instagram{font-size:2em;}
+
+.header-container,
+.logo-wrap{width: 100%;}
+h2,h3{font-weight: normal;}
+.hero-info .img-wrap{
+	width: 150px;
+	height: 150px;
+	margin: -75px auto 0;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	border-radius: 75px;
+	overflow: hidden;
+}
+.header-container{
+	background:#31101f;
+	background:rgba(49,16,31,.85);
+	padding: .5em 0;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+}
+.header-container img{margin: auto;display: block;}
+.hero-info .piece-title{margin-bottom: 0;}
+.hero-info .piece-artist,
+.hero-info p{
+	text-align: center;
+	margin-bottom: 0;
+}
+
+aside ul{
+	list-style: none;
+}
+aside ul h4{
+	margin: 0;
+}
+
+.social{text-align: center; display: block; width: 120px;margin: 1.25em auto;}
+.social a{
+	float: left;
+	margin: 0 .5em;
+	font-size: 2em;
+	color: #31101f;
+}
+
+
+
+html, body, #map {
+    height: 100%;
+}
+
+#content article, .view {
+	padding: 1em 0 !important;
+}

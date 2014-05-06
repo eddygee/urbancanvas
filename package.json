@@ -1,0 +1,22 @@
+{
+  "name": "pbartfinder",
+  "version": "0.0.0",
+  "description": "Startup Palm Beach Hackathon",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eddygee/art-wayfinder.git"
+  },
+  "author": "eddy-gee",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/eddygee/art-wayfinder/issues"
+  },
+  "dependencies": {
+    "logfmt": "~1.1.2",
+    "express": "~4.1.1"
+  }
+}
