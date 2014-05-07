@@ -20,6 +20,7 @@ h1{
 	color: #31101f;
 	margin-top: -39px;
 }
+.hide{display: none;}
 .center{text-align: center;display: block;}
 .instagram{font-size:2em;}
 
@@ -44,6 +45,7 @@ h2,h3{font-weight: normal;}
 	z-index: 999;
 }
 .header-container img{margin: auto;display: block;}
+.hero-img img{width: 100%;}
 .hero-info .piece-title{margin-bottom: 0;}
 .hero-info .piece-artist,
 .hero-info p{

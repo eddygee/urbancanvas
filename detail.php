@@ -33,7 +33,7 @@
                     <h1 class="piece-artist">Anthony Hernandez</h1>
                     <div class="social">
                         <a href="http://instagram.com/anthonyhernandezart/"><i class="fa fa-instagram"></i></a>
-                        <a class="artist-link" href="http://anthonyhernandezart.com/"><i class="fa fa-user"></i></a>
+                        <a href="http://anthonyhernandezart.com/"><i class="fa fa-user"></i></a>
                     </div>
                     
                 </div>
